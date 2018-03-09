@@ -1,8 +1,8 @@
 {
-	"name": "gedex/janrain-api",
+	"name": "jorgee/janrain-api",
 	"type": "library",
-	"description": "Janrain API client",
-	"homepage": "https://github.com/gedex/php-janrain-api",
+	"description": "Fork of gedex/janrain-api - Janrain API client",
+	"homepage": "https://github.com/JorgeSivil/php-janrain-api",
 	"keywords": ["janrain", "api", "client", "capture", "engage"],
 	"license": "MIT",
 	"authors": [
@@ -10,6 +10,10 @@
 			"name": "Akeda Bagus",
 			"email": "admin@gedex.web.id",
 			"homepage": "http://gedex.web.id"
+		},
+		{
+			"name": "Jorge Sivil",
+			"email": "jorge.sivil@gmail.com"
 		}
 	],
 	"require": {
@@ -23,7 +27,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"Janrain\\": "lib/"
+			"Gedex\\Janrain\\": "lib/"
 		}
 	},
 	"extra": {
