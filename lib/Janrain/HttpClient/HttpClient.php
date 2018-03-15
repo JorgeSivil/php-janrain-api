@@ -46,7 +46,7 @@ class HttpClient implements HttpClientInterface
 		$client = $client ?: new GuzzleClient($this->options['base_url'], $this->options);
 		$this->client = $client;
 
-		$this->addListener('request.before_send', array(
+		/*$this->addListener('request.before_send', array(
 			new AuthListener($this->options), 'onRequestBeforeSend'
 		));
 
@@ -54,7 +54,7 @@ class HttpClient implements HttpClientInterface
 		$this->addListener('request.error', array($errorListener, 'onRequestError'));
 
 		// Janrain returns status code 200 even if error occurred.
-		$this->addListener('request.success', array($errorListener, 'onRequestError'));
+		$this->addListener('request.success', array($errorListener, 'onRequestError'));*/
 
 		$this->clearHeaders();
 	}

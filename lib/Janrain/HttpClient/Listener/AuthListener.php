@@ -22,7 +22,7 @@ class AuthListener
 
 		$parameters = array();
 
-/*		// Use either 'access_token' or 'client_id' paired with 'client_secret'.
+		// Use either 'access_token' or 'client_id' paired with 'client_secret'.
 		// Prioritize 'access_token' over 'client_id' and 'client_secret'.
 		if (isset($this->options['access_token']) && $this->options['access_token']) {
 			$parameters['access_token'] = $this->options['access_token'];
@@ -44,7 +44,7 @@ class AuthListener
 		// Most Partner API calls need 'partnerKey'.
 		if (isset($this->options['partner_key']) && $this->options['partner_key']) {
 			$parameters['partnerKey'] = $this->options['partner_key'];
-		}*/
+		}
 
 		$url .= (false === strpos($url, '?') ? '?' : '&');
 		$url .= utf8_encode(http_build_query($parameters, '', '&'));

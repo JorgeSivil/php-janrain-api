@@ -38,10 +38,6 @@ class ErrorListener
 		$response = $request->getResponse();
 		$content  = ResponseMediator::getContent($response);
 
-		if ($response->isSuccessful()) {
-		    return;
-        }
-
 		if ($response->isClientError() || $response->isServerError() || (isset($content['stat']) && 'ok' !== strtolower($content['stat']))) {
 			$errorMsg = isset($content['error_description']) ? $content['error_description'] : '';
 			if (empty($errorMsg) && isset($content['error']['msg'])) {
