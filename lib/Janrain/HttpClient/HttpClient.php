@@ -34,6 +34,7 @@ class HttpClient implements HttpClientInterface
 
 	private $lastResponse;
 	private $lastRequest;
+	private $client;
 
 	/**
 	 * @param array           $options
