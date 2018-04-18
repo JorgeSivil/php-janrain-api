@@ -46,4 +46,9 @@ class OAuth extends AbstractApi
 	{
 		return $this->post('oauth/verify_email_native', $params);
 	}
+
+    public function updateProfileNative(array $params)
+    {
+        return $this->post('oauth/update_profile_native', $params);
+    }
 }
