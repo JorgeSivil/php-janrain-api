@@ -4,13 +4,6 @@ namespace Janrain\HttpClient;
 
 use Guzzle\Http\Client as GuzzleClient;
 use Guzzle\Http\ClientInterface;
-use Guzzle\Http\Message\Request;
-use Guzzle\Http\Message\Response;
-
-use Janrain\Exception\ErrorException;
-use Janrain\Exception\RuntimeException;
-use Janrain\HttpClient\Listener\AuthListener;
-use Janrain\HttpClient\Listener\ErrorListener;
 
 /**
  * Performs requests on Janrain API.
@@ -32,8 +25,6 @@ class HttpClient implements HttpClientInterface
 
 	protected $headers = array();
 
-	private $lastResponse;
-	private $lastRequest;
 	private $client;
 
 	/**
@@ -114,13 +105,7 @@ class HttpClient implements HttpClientInterface
 		$request = $this->createRequest($httpMethod, $path, $body, $headers, $options);
 		$request->addHeaders($headers);
 
-		try {
-			$response = $this->client->send($request);
-		} catch (\LogicException $e) {
-			throw new ErrorException($e->getMessage());
-		} catch (\RuntimeException $e) {
-			throw new RuntimeException($e->getMessage());
-		}
+        $response = $this->client->send($request);
 
 		return $response;
 	}
