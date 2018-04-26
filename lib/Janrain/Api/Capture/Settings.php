@@ -67,13 +67,8 @@ class Settings extends AbstractApi
 	 *                            parameter, it defaults to the value of the
 	 *                            `client_id`
 	 */
-	public function items($forClientId = null)
+	public function items($params)
 	{
-		$params = array();
-		if ($forClientId) {
-			$params['for_client_id'] = $forClientId;
-		}
-
 		return $this->post('settings/items', $params);
 	}
 
