@@ -99,6 +99,10 @@ class Client
 				$section = 'capture';
 				break;
 			case 'engage':
+			    // Cloning $this because author didn't take into account that this class could be used for different APIs
+                // and he's changing the base_url for engage but never changing it back to original for Oauth calls, for example.
+                $client = clone $this;
+                $client->setOption('base_url', 'https://rpxnow.com/api/v2');
 				$api = new Api\Engage\Engage($this);
 				$section = 'engage';
 				break;
