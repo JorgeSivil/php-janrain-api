@@ -150,18 +150,6 @@ class Client
 				throw new InvalidArgumentException(sprintf('Undefined Api instance called: "%s"', $name));
 		}
 
-		// Engage and Partner endpoints have different domain than Capture. However,
-		// Engage has common prefix path '/api/v2/' while Partner has fixed domain,
-		// 'https://rxpnow.com', and prefix path, '/partner/v2'.
-		if ('engage' === $section) {
-			$url = $this->getOption('base_url');
-			if (false === strpos($url, 'api/v2')) {
-				$this->setOption('base_url', rtrim($url, '/') . '/api/v2');
-			}
-		} else if ('partner' === $section) {
-			$this->setOption('base_url', 'https://rpxnow.com/partner/v2');
-		}
-
 		return $api;
 	}
 
